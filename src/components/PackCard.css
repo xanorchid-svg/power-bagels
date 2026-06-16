@@ -1,0 +1,39 @@
+.pack-card {
+  background: var(--white);
+  border: 2px solid rgba(0,0,0,.07);
+  border-radius: 20px;
+  padding: 28px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .25s var(--ease);
+  position: relative;
+}
+.pack-card:hover,
+.pack-card.selected {
+  border-color: var(--purple);
+  box-shadow: 0 12px 32px rgba(79,35,140,.14);
+  transform: translateY(-4px);
+}
+.pack-popular {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--green); color: var(--white);
+  font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 100px; white-space: nowrap;
+}
+.pack-num {
+  font-family: 'Satoshi','Inter',sans-serif; font-weight: 900;
+  font-size: 48px; color: var(--purple); line-height: 1; letter-spacing: -.03em;
+}
+.pack-unit { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--gray); margin: 4px 0 16px; }
+.pack-price { font-weight: 800; font-size: 22px; color: var(--charcoal); letter-spacing: -.02em; }
+.pack-ppu { font-size: 10px; color: var(--gray); letter-spacing: .06em; text-transform: uppercase; margin: 4px 0 8px; }
+.pack-save { font-size: 12px; font-weight: 700; color: var(--green); min-height: 18px; }
+.pack-add {
+  width: 100%; margin-top: 16px;
+  background: var(--purple); color: var(--white);
+  border: none; border-radius: 10px; padding: 11px;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  cursor: pointer; font-family: 'Inter',sans-serif; transition: background .2s;
+}
+.pack-card:hover .pack-add,
+.pack-card.selected .pack-add { background: var(--green); }

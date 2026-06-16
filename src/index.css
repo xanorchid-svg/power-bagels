@@ -1,111 +1,252 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --purple:    #4F238C;
+  --purple-dk: #3a1a6e;
+  --purple-lt: #6b35b8;
+  --green:     #77C043;
+  --green-dk:  #5e9932;
+  --cream:     #F8F6F1;
+  --cream-dk:  #ede9e0;
+  --charcoal:  #222222;
+  --white:     #ffffff;
+  --gray:      #888888;
+  --ease:      cubic-bezier(.22,1,.36,1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-body {
+*, *::before, *::after {
   margin: 0;
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+html {
+  scroll-behavior: smooth;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+/* ── SHARED ── */
+.section-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.eyebrow-lt { color: rgba(255,255,255,.45); }
+
+.display-xl {
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 6.5vw, 94px);
+  line-height: .93;
+  letter-spacing: -.04em;
+}
+
+.display-lg {
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: clamp(38px, 5vw, 70px);
+  line-height: .97;
+  letter-spacing: -.033em;
+}
+
+.display-md {
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -.025em;
+}
+
+.accent-green  { color: var(--green); }
+.accent-purple { color: var(--purple); }
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--charcoal);
+  padding: 15px 0;
+  overflow: hidden;
+}
+.ticker-track {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  animation: ticker 24s linear infinite;
+}
+@keyframes ticker {
+  from { transform: translateX(0) }
+  to   { transform: translateX(-50%) }
+}
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.38);
+}
+.ticker-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 100px;
+  padding: 18px 44px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 8px 32px rgba(119,192,67,.32);
+  transition: background .2s, transform .15s, box-shadow .2s;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--green-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px rgba(119,192,67,.42);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.btn-purple {
+  background: var(--purple);
+  box-shadow: 0 8px 32px rgba(79,35,140,.3);
+}
+.btn-purple:hover {
+  background: var(--purple-dk);
+  box-shadow: 0 16px 44px rgba(79,35,140,.4);
+}
+
+/* ── PAGE HERO SHARED ── */
+.page-hero {
+  background: var(--purple);
+  padding: 120px 48px 72px;
+  text-align: center;
+}
+.page-hero h1 { color: var(--white); margin-bottom: 12px; }
+.page-hero p  { color: rgba(255,255,255,.5); font-size: 17px; max-width: 520px; margin: 0 auto; }
+
+/* ── FOOTER ── */
+footer {
+  background: #09020f;
+  padding: 64px 48px 36px;
+}
+.footer-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 44px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.footer-logo-mark {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--purple);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; color: var(--white); font-size: 9px;
+}
+.footer-logo-text {
+  color: var(--white);
+  font-weight: 800; font-size: 13px;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.footer-tagline { color: rgba(255,255,255,.28); font-size: 13px; line-height: 1.7; }
+.footer-col-title {
+  color: var(--white); font-weight: 700;
+  font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-links a,
+.footer-links button {
+  color: rgba(255,255,255,.3);
+  font-size: 13px; text-decoration: none;
+  background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif; text-align: left;
+  transition: color .2s;
+}
+.footer-links a:hover,
+.footer-links button:hover { color: rgba(255,255,255,.7); }
+.footer-bottom {
+  max-width: 1320px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,.05);
+  padding-top: 22px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { color: rgba(255,255,255,.18); font-size: 12px; }
+.footer-green { color: var(--green); }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--charcoal); color: var(--white);
+  border-radius: 100px; padding: 13px 26px;
+  font-weight: 600; font-size: 14px; z-index: 9999;
+  opacity: 0; transition: opacity .3s, transform .3s;
+  display: flex; align-items: center; gap: 9px;
+  border: 1px solid rgba(255,255,255,.09);
+  white-space: nowrap; pointer-events: none;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── FOOTER LOGO IMAGE ── */
+.footer-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  mix-blend-mode: lighten;
+  filter: brightness(1.05);
 }
