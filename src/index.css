@@ -250,3 +250,50 @@ footer {
   mix-blend-mode: lighten;
   filter: brightness(1.05);
 }
+
+/* ══════════════════════════════════════
+   GLOBAL MOBILE
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Typography scale down */
+  .display-xl { font-size: clamp(42px, 11vw, 72px); }
+  .display-lg { font-size: clamp(32px, 9vw, 56px); }
+  .display-md { font-size: clamp(24px, 7vw, 38px); }
+
+  /* Page heroes */
+  .page-hero {
+    padding: 100px 24px 48px;
+  }
+  .page-hero p { font-size: 15px; }
+
+  /* Footer */
+  footer { padding: 48px 20px 28px; }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    padding: 15px 32px;
+    font-size: 13px;
+  }
+
+  /* Section inner */
+  .section-inner { padding: 0 20px; }
+}
+
+@media (max-width: 480px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

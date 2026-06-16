@@ -37,3 +37,13 @@
 }
 .pack-card:hover .pack-add,
 .pack-card.selected .pack-add { background: var(--green); }
+
+@media (max-width: 768px) {
+  .pack-card { padding: 20px 10px; border-radius: 14px; }
+  .pack-num { font-size: 36px; }
+  .pack-price { font-size: 17px; }
+  .pack-ppu { font-size: 9px; }
+  .pack-save { font-size: 10px; }
+  .pack-add { font-size: 10px; padding: 9px 6px; }
+  .pack-popular { font-size: 8px; padding: 3px 8px; top: -10px; }
+}

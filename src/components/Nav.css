@@ -18,13 +18,9 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
-/* 
-  The logo image has a cream background.
-  mix-blend-mode: multiply makes white/cream pixels transparent
-  against the dark nav — the purple disc shows cleanly.
-*/
 .nav-logo-img {
   width: 44px;
   height: 44px;
@@ -42,7 +38,8 @@
   text-transform: uppercase;
 }
 
-.nav-links {
+/* ── DESKTOP LINKS ── */
+.nav-links-desktop {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -59,7 +56,6 @@
   border-radius: 8px;
   transition: color .2s, background .2s;
 }
-
 .nav-link:hover,
 .nav-link.active {
   color: var(--white);
@@ -94,4 +90,114 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ── MOBILE RIGHT (hidden on desktop) ── */
+.nav-mobile-right {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+}
+.ham-line {
+  display: block;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all .25s;
+}
+.ham-line:nth-child(1) { width: 22px; }
+.ham-line:nth-child(2) { width: 16px; }
+.ham-line:nth-child(3) { width: 22px; }
+.ham-line.open:nth-child(1) { width: 22px; transform: translateY(7px) rotate(45deg); }
+.ham-line.open:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.ham-line.open:nth-child(3) { width: 22px; transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE DRAWER ── */
+.mobile-drawer {
+  position: fixed;
+  top: 60px; left: 0; right: 0;
+  z-index: 998;
+  background: rgba(18, 6, 42, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 16px 0 24px;
+  animation: drawerSlide .2s ease;
+}
+@keyframes drawerSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-link {
+  display: block;
+  padding: 16px 24px;
+  color: rgba(255,255,255,.7);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: .02em;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: color .2s, background .2s;
+}
+.mobile-link:hover,
+.mobile-link.active {
+  color: var(--white);
+  background: rgba(255,255,255,.05);
+}
+.mobile-cart {
+  color: var(--green) !important;
+  margin-top: 8px;
+  border-bottom: none !important;
+  font-weight: 700;
+}
+.mobile-cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 20px;
+    height: 60px;
+  }
+  .nav-logo-img { width: 36px; height: 36px; }
+  .nav-logo-text { font-size: 11px; letter-spacing: .08em; }
+  .nav-links-desktop { display: none; }
+  .nav-mobile-right { display: flex; }
+  .mobile-drawer { top: 60px; }
+}
+
+@media (min-width: 769px) {
+  .nav-mobile-right { display: none; }
+  .mobile-drawer { display: none; }
 }

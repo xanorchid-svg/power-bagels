@@ -279,3 +279,169 @@
   mix-blend-mode: lighten;
   filter: brightness(1.1);
 }
+
+/* ══════════════════════════════════════
+   MOBILE — max-width 768px
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    padding-top: 68px;
+  }
+
+  .hero-video-bg video {
+    object-position: 60% center;
+  }
+
+  .hero-inner {
+    padding: 24px 20px 40px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-text-col {
+    width: 100%;
+    padding: 28px 24px 32px;
+    border-radius: 16px;
+    background: rgba(245,240,232,0.9);
+  }
+
+  .hero-wordmark {
+    margin-bottom: 20px;
+  }
+
+  /* Scale wordmark down so it fits mobile width */
+  .hero-wordmark svg {
+    width: 100% !important;
+    max-width: 260px;
+    height: auto !important;
+  }
+
+  .hero-stat-32g .num {
+    font-size: clamp(44px, 14vw, 72px);
+  }
+
+  .hero-stat-label {
+    font-size: clamp(14px, 4vw, 20px);
+  }
+
+  .hero-icons {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-icon-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .hero-icon-label {
+    font-size: 8px;
+    max-width: 56px;
+  }
+
+  .hero-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+
+  .d-check {
+    max-width: 100%;
+  }
+
+  /* WHY */
+  .why-section { padding: 72px 0; }
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .why-card { padding: 26px 22px; }
+  .why-card-title { font-size: 17px; }
+
+  /* COMPARE */
+  .compare-section { padding: 72px 0; }
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* NUTRITION */
+  .nutrition-section { padding: 72px 0; }
+  .nutrition-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .nutrition-visual { margin-top: 0; }
+  .ring-wrap svg { width: 260px; height: 260px; }
+  .mp1 { top: -6px; right: -10px; }
+  .mp2 { bottom: 20px; right: -20px; }
+  .mp3 { bottom: -6px; left: 4px; }
+  .mpill { padding: 7px 12px; }
+  .mpill-val { font-size: 15px; }
+
+  /* TESTIMONIALS */
+  .testi-section { padding: 72px 0; }
+  .testi-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* ORDER EMBED */
+  .order-embed { padding: 72px 0; }
+  .pack-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  /* Hide save 17% and save 22% packs on mobile to keep 3-col clean */
+  .pack-grid > *:nth-child(4),
+  .pack-grid > *:nth-child(5) {
+    display: none;
+  }
+
+  /* CTA */
+  .cta-section { padding: 72px 24px; }
+  .cta-sub { font-size: 15px; }
+
+  /* SECTION INNER padding */
+  .section-inner { padding: 0 20px; }
+}
+
+/* ══════════════════════════════════════
+   SMALL MOBILE — max-width 480px
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  .hero-text-col {
+    padding: 22px 18px 26px;
+  }
+
+  .hero-icons {
+    gap: 10px;
+  }
+
+  .hero-icon-item {
+    min-width: 58px;
+  }
+
+  /* Show all 5 packs stacked 2+3 on small screens */
+  .pack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pack-grid > *:nth-child(4),
+  .pack-grid > *:nth-child(5) {
+    display: block;
+  }
+
+  .why-section { padding: 56px 0; }
+  .compare-section { padding: 56px 0; }
+  .nutrition-section { padding: 56px 0; }
+  .testi-section { padding: 56px 0; }
+  .order-embed { padding: 56px 0; }
+}
