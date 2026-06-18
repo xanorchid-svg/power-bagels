@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import PackCard from '../components/PackCard'
-import LogoWordmark from '../components/LogoWordmark'
+import logoHero from '../assets/logo-hero.png'
 import logoFoodOfJoy from '../assets/logo-food-of-joy.png'
 import { PACKS, DELIVERY_ZIPS } from '../data/constants'
 import './Home.css'
@@ -86,9 +86,9 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-text-col">
 
-            {/* Power Bagels wordmark — crisp SVG */}
+            {/* Power Bagels logo — full brand mark */}
             <div className="hero-wordmark">
-              <LogoWordmark width={390} dark />
+              <img src={logoHero} alt="Power Bagels" className="hero-logo-img" />
             </div>
 
             {/* 35G stat */}

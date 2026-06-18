@@ -278,6 +278,22 @@
   filter: brightness(1.1);
 }
 
+
+/* ── HERO LOGO IMG ── */
+.hero-logo-img {
+  width: 380px;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+  .hero-logo-img {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 /* ══════════════════════════════════════
    MOBILE — max-width 768px
 ══════════════════════════════════════ */
@@ -446,14 +462,7 @@
   .order-embed { padding: 56px 0; }
 }
 
-/* ── HERO WORDMARK PNG ── */
-.hero-wordmark-img {
-  width: 320px;
-  height: auto;
-  display: block;
-  /* mix-blend-mode: multiply so cream bg disappears on the frosted panel */
-  mix-blend-mode: multiply;
-}
+
 
 /* ── FOOTER LOGO text group (Food of Joy sub-brand) ── */
 .footer-foj-img {
