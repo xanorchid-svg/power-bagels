@@ -161,7 +161,7 @@ body {
 /* ── PAGE HERO SHARED ── */
 .page-hero {
   background: var(--orange);
-  padding: 120px 48px 72px;
+  padding: 144px 48px 72px;
   text-align: center;
 }
 .page-hero h1 { color: var(--white); margin-bottom: 12px; }
@@ -263,7 +263,7 @@ footer {
 
   /* Page heroes */
   .page-hero {
-    padding: 100px 24px 48px;
+    padding: 124px 24px 48px;
   }
   .page-hero p { font-size: 15px; }
 

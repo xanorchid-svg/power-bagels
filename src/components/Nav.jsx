@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
-import logoCircular from '../assets/logo-circular.png'
+import logoFoodOfJoy from '../assets/logo-food-of-joy.png'
 import './Nav.css'
 
 export default function Nav() {
@@ -10,21 +10,23 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const links = [
-    { to: '/',         label: 'Home' },
-    { to: '/order',    label: 'Order' },
-    { to: '/delivery', label: 'Delivery' },
-    { to: '/about',    label: 'About Alice' },
-    { to: '/faq',      label: 'FAQ' },
+    { to: '/delivery', label: 'Take the Challenge' },
+    { to: '/order',    label: 'Order A La Carte' },
+    { to: '/faq',      label: 'F.A.Q.' },
   ]
 
   const close = () => setMenuOpen(false)
 
   return (
     <>
+      {/* ── TOP BANNER ── */}
+      <div className="nav-banner">
+        Veggies Made Easy and Delicious
+      </div>
+
       <nav className="nav">
         <Link to="/" className="nav-logo" onClick={close}>
-          <img src={logoCircular} alt="Power Bagels" className="nav-logo-img" />
-          <span className="nav-logo-text">Power Bagels</span>
+          <img src={logoFoodOfJoy} alt="Food of Joy" className="nav-logo-img" />
         </Link>
 
         {/* Desktop links */}
@@ -37,16 +39,18 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <Link to="/cart" className="nav-cart">
-              🛒 Cart <span className="nav-cart-count">{cartCount}</span>
+            <Link to="/cart" className="nav-cart" aria-label="Cart">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              {cartCount > 0 && <span className="nav-cart-count">{cartCount}</span>}
             </Link>
           </li>
         </ul>
 
         {/* Mobile right — cart + hamburger */}
         <div className="nav-mobile-right">
-          <Link to="/cart" className="nav-cart" onClick={close}>
-            🛒 <span className="nav-cart-count">{cartCount}</span>
+          <Link to="/cart" className="nav-cart" onClick={close} aria-label="Cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            {cartCount > 0 && <span className="nav-cart-count">{cartCount}</span>}
           </Link>
           <button
             className="hamburger"
@@ -64,6 +68,7 @@ export default function Nav() {
       {menuOpen && (
         <div className="mobile-drawer">
           <ul className="mobile-links">
+            <li><Link to="/" className={`mobile-link${pathname === '/' ? ' active' : ''}`} onClick={close}>Home</Link></li>
             {links.map(({ to, label }) => (
               <li key={to}>
                 <Link
@@ -77,7 +82,7 @@ export default function Nav() {
             ))}
             <li>
               <Link to="/cart" className="mobile-link mobile-cart" onClick={close}>
-                🛒 Cart {cartCount > 0 && <span className="mobile-cart-count">{cartCount}</span>}
+                Cart {cartCount > 0 && <span className="mobile-cart-count">{cartCount}</span>}
               </Link>
             </li>
           </ul>

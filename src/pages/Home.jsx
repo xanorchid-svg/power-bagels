@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import PackCard from '../components/PackCard'
-import LogoWordmark from '../components/LogoWordmark'
-import logoCircular from '../assets/logo-circular.png'
+import logoWordmark from '../assets/logo-wordmark.png'
+import logoFoodOfJoy from '../assets/logo-food-of-joy.png'
 import { PACKS, DELIVERY_ZIPS } from '../data/constants'
 import './Home.css'
 
@@ -86,15 +86,15 @@ export default function Home() {
         <div className="hero-inner">
           <div className="hero-text-col">
 
-            {/* Wordmark — 50% larger than before (was 260, now 390) */}
+            {/* Power Bagels wordmark PNG — transparent background */}
             <div className="hero-wordmark">
-              <LogoWordmark width={390} dark />
+              <img src={logoWordmark} alt="Power Bagels by Food of Joy" className="hero-wordmark-img" />
             </div>
 
-            {/* 32G stat */}
+            {/* 35G stat */}
             <div className="hero-stat-block">
-              <div className="hero-stat-32g">
-                <span className="num">32G</span>
+              <div className="hero-stat-35g">
+                <span className="num">35G</span>
               </div>
               <div className="hero-stat-label">Protein</div>
               <div className="hero-stat-sub">For Every Bagel</div>
@@ -150,7 +150,7 @@ export default function Home() {
       <div className="ticker">
         <div className="ticker-track" aria-hidden="true">
           {[...Array(2)].map((_, r) =>
-            ['Missing bread? We got you','32g Protein — Every Bagel','Plain · Everything · Cinnamon Raisin','Zero Artificial Ingredients','Delivering Within 30 Miles of San Diego','Real Ingredients. Serious Protein.']
+            ['Missing bread? We got you','35g Protein — Every Bagel','Plain · Everything · Blueberry · Sesame','Zero Artificial Ingredients','Delivering Within 30 Miles of San Diego','Real Ingredients. Serious Protein.']
               .map((t, i) => (
                 <span key={`${r}-${i}`} className="ticker-item">
                   <span className="ticker-dot" />{t}
@@ -171,7 +171,7 @@ export default function Home() {
           </div>
           <div className="why-grid">
             {[
-              { icon:'⚡', title:'32g Protein from Real Sources', body:'Not powder dumped into dough. Every gram comes from whole wheat, whey isolate, and egg whites — the kind of protein your body actually uses.' },
+              { icon:'⚡', title:'35g Protein from Real Sources', body:'Not powder dumped into dough. Every gram comes from whole wheat, whey isolate, and egg whites — the kind of protein your body actually uses.' },
               { icon:'🌿', title:'Read Every Ingredient', body:"Flip over a typical protein product and count the words you can't pronounce. Flip ours. Everything is real, intentional, nothing is hiding." },
               { icon:'🥯', title:'It Actually Tastes Like a Bagel', body:"Dense, chewy, satisfying. The thing you've been craving while everyone told you bread was the enemy. Turns out the problem was never the bagel." },
               { icon:'🧊', title:'Freeze. Toast. Done.', body:"Order a 12-pack, freeze them, grab one each morning and toast for 3 minutes. Zero planning. Maximum protein." },
@@ -214,9 +214,9 @@ export default function Home() {
               ))}
             </div>
             <div>
-              <div className="col-label">Power Bagels <span className="col-badge pb">Always 32g</span></div>
+              <div className="col-label">Power Bagels <span className="col-badge pb">Always 35g</span></div>
               <div className="bar-row" style={{ marginBottom:24 }}>
-                <div className="bar-lbl"><span>Power Bagel (any flavor)</span><span style={{ color:'var(--green)' }}>32g ✓</span></div>
+                <div className="bar-lbl"><span>Power Bagel (any flavor)</span><span style={{ color:'var(--green)' }}>35g ✓</span></div>
                 <div className="bar-track"><div className="bar-fill bf-green" data-w={100} style={{ width:0 }} /></div>
               </div>
               <div className="proof-box">
@@ -296,7 +296,7 @@ export default function Home() {
           <div className="testi-grid">
             {[
               { i:'JM', name:'Jessica M.', loc:'San Diego, CA', text:'"I\'ve tried every protein breakfast product. This is the only one I actually look forward to eating. It tastes like a real bagel because it IS a real bagel."' },
-              { i:'DC', name:'David C.', loc:'Oceanside, CA', text:'"32g of protein for breakfast without drinking a shake? My kids eat these too — cinnamon raisin is their favorite. Zero artificial stuff is non-negotiable for our family."' },
+              { i:'DC', name:'David C.', loc:'Oceanside, CA', text:'"35g of protein for breakfast without drinking a shake? My kids eat these too — blueberry is their favorite. Zero artificial stuff is non-negotiable for our family."' },
               { i:'SR', name:'Sara R.', loc:'La Mesa, CA', text:'"Ordered the 12-pack. Froze them. Toast one every morning. My nutrition hasn\'t been this dialed in years. Game changer."' },
             ].map((t, idx) => (
               <div key={idx} ref={addRef} className="t-card reveal">
@@ -346,18 +346,21 @@ export default function Home() {
         <div className="footer-inner">
           <div>
             <div className="footer-logo">
-              <img src={logoCircular} alt="Power Bagels" className="footer-logo-img" />
-              <span className="footer-logo-text">Power Bagels</span>
+              <img src={logoFoodOfJoy} alt="Food of Joy" className="footer-logo-img footer-foj-img" />
+              <div className="footer-logo-text-group">
+                <span className="footer-logo-subbrand">Power Bagels</span>
+                <span className="footer-logo-parent">by Food of Joy</span>
+              </div>
             </div>
             <p className="footer-tagline">Real Ingredients. Serious Protein.<br />Delivering within 30 miles of Oceanside & San Diego, CA.</p>
           </div>
-          <div><div className="footer-col-title">Shop</div><ul className="footer-links"><li><Link to="/order">Plain Bagels</Link></li><li><Link to="/order">Everything Bagels</Link></li><li><Link to="/order">Cinnamon Raisin</Link></li></ul></div>
-          <div><div className="footer-col-title">Info</div><ul className="footer-links"><li><Link to="/delivery">Delivery Areas</Link></li><li><Link to="/faq">FAQ</Link></li><li><Link to="/about">About Alice</Link></li></ul></div>
+          <div><div className="footer-col-title">Shop</div><ul className="footer-links"><li><Link to="/order">Plain Bagels</Link></li><li><Link to="/order">Everything Bagels</Link></li><li><Link to="/order">Sesame</Link></li></ul></div>
+          <div><div className="footer-col-title">Info</div><ul className="footer-links"><li><Link to="/delivery">Delivery Areas</Link></li><li><Link to="/faq">FAQ</Link></li></ul></div>
           <div><div className="footer-col-title">Connect</div><ul className="footer-links"><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">Contact Us</a></li></ul></div>
         </div>
         <div className="footer-bottom">
           <div className="footer-copy">© 2026 Power Bagels. All rights reserved.</div>
-          <div className="footer-copy"><span className="footer-green">32g protein</span> · All natural · Real ingredients</div>
+          <div className="footer-copy"><span className="footer-green">35g protein</span> · All natural · Real ingredients</div>
         </div>
       </footer>
 
