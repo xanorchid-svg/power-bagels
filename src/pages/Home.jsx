@@ -261,8 +261,8 @@ export default function Home() {
                 <svg width="320" height="320" viewBox="0 0 320 320">
                   <defs>
                     <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#E68A00" />
-                      <stop offset="100%" stopColor="#8AA05C" />
+                      <stop offset="0%" stopColor="#FA7C08" />
+                      <stop offset="100%" stopColor="#8FA468" />
                     </linearGradient>
                   </defs>
                   <circle cx="160" cy="160" r="140" fill="var(--orange)" />
@@ -272,7 +272,7 @@ export default function Home() {
                     strokeDasharray="754" strokeDashoffset="188"
                     transform="rotate(-90 160 160)" />
                   <text x="160" y="148" textAnchor="middle" fill="white" fontSize="68" fontWeight="900" fontFamily="Inter,sans-serif" letterSpacing="-4">35</text>
-                  <text x="160" y="178" textAnchor="middle" fill="#8AA05C" fontSize="13" fontWeight="700" letterSpacing="3" fontFamily="Inter,sans-serif">GRAMS</text>
+                  <text x="160" y="178" textAnchor="middle" fill="#8FA468" fontSize="13" fontWeight="700" letterSpacing="3" fontFamily="Inter,sans-serif">GRAMS</text>
                   <text x="160" y="198" textAnchor="middle" fill="rgba(255,255,255,.38)" fontSize="12" letterSpacing="2" fontFamily="Inter,sans-serif">PROTEIN</text>
                 </svg>
                 <div className="ring-pills">

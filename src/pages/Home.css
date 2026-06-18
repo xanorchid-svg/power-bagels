@@ -64,7 +64,7 @@
   font-family: 'Satoshi','Arial Black',sans-serif;
   font-weight: 900;
   font-size: clamp(52px, 7vw, 96px);
-  color: #E68A00;
+  color: #FA7C08;
   line-height: .88;
   letter-spacing: -.04em;
   display: flex;
@@ -78,7 +78,7 @@
   font-family: 'Satoshi','Arial Black',sans-serif;
   font-weight: 900;
   font-size: clamp(14px, 1.8vw, 22px);
-  color: #E68A00;
+  color: #FA7C08;
   letter-spacing: .04em;
   text-transform: uppercase;
   line-height: 1.1;
@@ -88,7 +88,7 @@
   font-family: 'Inter',sans-serif;
   font-weight: 700;
   font-size: clamp(10px, 1.1vw, 13px);
-  color: #E68A00;
+  color: #FA7C08;
   letter-spacing: .12em;
   text-transform: uppercase;
   opacity: .65;
@@ -110,7 +110,7 @@
 .hero-icon-circle {
   width: 44px; height: 44px;
   border-radius: 50%;
-  border: 2px solid #E68A00;
+  border: 2px solid #FA7C08;
   display: flex; align-items: center; justify-content: center;
   font-size: 18px;
 }
@@ -119,7 +119,7 @@
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: #E68A00;
+  color: #FA7C08;
   text-align: center;
   max-width: 64px;
   line-height: 1.3;
@@ -130,7 +130,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #E68A00;
+  background: #FA7C08;
   color: #FFFFFF;
   border: none;
   border-radius: 6px;
@@ -145,7 +145,7 @@
   transition: background .2s, transform .15s;
   margin-bottom: 28px;
 }
-.hero-cta:hover { background: #c97800; transform: translateY(-2px); }
+.hero-cta:hover { background: #d96500; transform: translateY(-2px); }
 
 /* ── DELIVERY CHECKER ── */
 .d-check {
@@ -163,21 +163,21 @@
   background: rgba(255,255,255,.75);
   border: 1.5px solid rgba(180,110,0,.25);
   border-radius: 8px; padding: 12px 16px;
-  color: #E68A00; font-size: 15px; font-weight: 500;
+  color: #FA7C08; font-size: 15px; font-weight: 500;
   font-family: 'Inter',sans-serif;
   outline: none; transition: border-color .2s, background .2s;
 }
 .d-input::placeholder { color: rgba(180,110,0,.35); }
-.d-input:focus { border-color: #8AA05C; background: white; }
+.d-input:focus { border-color: #8FA468; background: white; }
 .d-btn {
-  background: #8AA05C; color: white;
+  background: #8FA468; color: white;
   border: none; border-radius: 8px;
   padding: 12px 20px; font-size: 12px; font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase;
   cursor: pointer; font-family: 'Inter',sans-serif;
   white-space: nowrap; transition: background .2s, transform .15s;
 }
-.d-btn:hover { background: #6e8444; transform: translateY(-1px); }
+.d-btn:hover { background: #6e8050; transform: translateY(-1px); }
 .d-result {
   margin-top: 10px; font-size: 13px; font-weight: 600;
   border-radius: 8px; padding: 10px 13px;

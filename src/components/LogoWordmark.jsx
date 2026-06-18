@@ -2,8 +2,8 @@
 // "POWER" / "BAGELS" massive stacked, transparent bg, orange text
 // Green dash + "REAL INGREDIENTS. SERIOUS PROTEIN." tagline
 export default function LogoWordmark({ width = 280, dark = false, className = '' }) {
-  const textColor = dark ? '#E68A00' : '#F5F0E8'
-  const taglineColor = dark ? '#E68A00' : 'rgba(245,240,232,0.75)'
+  const textColor = dark ? '#FA7C08' : '#F5F0E8'
+  const taglineColor = dark ? '#FA7C08' : 'rgba(245,240,232,0.75)'
   const h = Math.round(width * 0.55)
 
   return (
@@ -48,7 +48,7 @@ export default function LogoWordmark({ width = 280, dark = false, className = ''
       >™</text>
 
       {/* Green dash */}
-      <rect x="0" y="295" width="80" height="5" rx="3" fill="#7AC943" />
+      <rect x="0" y="295" width="80" height="5" rx="3" fill="#8FA468" />
 
       {/* REAL INGREDIENTS. SERIOUS PROTEIN. */}
       <text

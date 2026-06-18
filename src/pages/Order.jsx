@@ -31,7 +31,7 @@ export default function Order() {
                 <div style={{ fontWeight:800, fontSize:18, color:'var(--charcoal)', letterSpacing:'-.02em' }}>{f.name}</div>
                 <div style={{ fontSize:12, color:'var(--gray)', marginTop:3 }}>{f.desc}</div>
                 <div style={{ display:'inline-flex', alignItems:'center', gap:6, background:'rgba(230,138,0,.07)', borderRadius:7, padding:'5px 11px', marginTop:10 }}>
-                  <span style={{ fontWeight:800, fontSize:13, color:'var(--orange)' }}>32g</span>
+                  <span style={{ fontWeight:800, fontSize:13, color:'var(--orange)' }}>35g</span>
                   <span style={{ fontSize:10, color:'var(--gray)', letterSpacing:'.06em', textTransform:'uppercase' }}>Protein</span>
                 </div>
                 {selectedFlavor===f.key && <div style={{ marginTop:8, fontSize:11, fontWeight:700, color:'var(--green)' }}>✓ Selected</div>}

@@ -19,7 +19,7 @@ export default function LogoPrimary({ size = 120, className = '' }) {
       </defs>
 
       {/* Main orange disc */}
-      <circle cx="200" cy="200" r="196" fill="#E68A00" />
+      <circle cx="200" cy="200" r="196" fill="#FA7C08" />
 
       {/* Inner ring detail */}
       <circle cx="200" cy="200" r="186" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
@@ -37,19 +37,19 @@ export default function LogoPrimary({ size = 120, className = '' }) {
 
       {/* Center hole — white circle representing bagel hole */}
       <circle cx="200" cy="185" r="62" fill="#F5F0E8" />
-      <circle cx="200" cy="185" r="44" fill="#E68A00" />
+      <circle cx="200" cy="185" r="44" fill="#FA7C08" />
 
       {/* Green banner across middle */}
-      <rect x="20" y="244" width="360" height="46" fill="#E68A00" />
-      <line x1="20" y1="248" x2="380" y2="248" stroke="#7AC943" strokeWidth="3" />
-      <line x1="20" y1="286" x2="380" y2="286" stroke="#7AC943" strokeWidth="3" />
+      <rect x="20" y="244" width="360" height="46" fill="#FA7C08" />
+      <line x1="20" y1="248" x2="380" y2="248" stroke="#8FA468" strokeWidth="3" />
+      <line x1="20" y1="286" x2="380" y2="286" stroke="#8FA468" strokeWidth="3" />
       <text
         x="200" y="273"
         textAnchor="middle"
         fontFamily="'Satoshi','Arial',sans-serif"
         fontWeight="700"
         fontSize="19"
-        fill="#7AC943"
+        fill="#8FA468"
         letterSpacing="2.5"
       >32Gs OF PROTEIN FOR EVERY BAGEL</text>
 
@@ -66,7 +66,7 @@ export default function LogoPrimary({ size = 120, className = '' }) {
 
       {/* Green leaf icon at bottom */}
       <g transform="translate(192, 352) scale(0.9)">
-        <path d="M8,0 C8,0 0,8 0,14 C0,18.4 3.6,22 8,22 C12.4,22 16,18.4 16,14 C16,8 8,0 8,0 Z" fill="#7AC943" transform="translate(-4,-2) rotate(-20,8,11)"/>
+        <path d="M8,0 C8,0 0,8 0,14 C0,18.4 3.6,22 8,22 C12.4,22 16,18.4 16,14 C16,8 8,0 8,0 Z" fill="#8FA468" transform="translate(-4,-2) rotate(-20,8,11)"/>
         <path d="M8,0 C8,0 0,8 0,14 C0,18.4 3.6,22 8,22 C12.4,22 16,18.4 16,14 C16,8 8,0 8,0 Z" fill="#5e9932" transform="translate(4,-2) rotate(20,8,11)"/>
       </g>
 

@@ -19,7 +19,7 @@ export default function Cart() {
           <div style={{ width: 58, height: 58, borderRadius: 11, background: 'var(--orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0 }}>🥯</div>
           <div style={{ flex: 1 }}>
             <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--charcoal)' }}>{item.flavor}</div>
-            <div style={{ fontSize: 12, color: 'var(--gray)', marginTop: 2 }}>{item.count}-Pack · ${item.price} · 32g protein each</div>
+            <div style={{ fontSize: 12, color: 'var(--gray)', marginTop: 2 }}>{item.count}-Pack · ${item.price} · 35g protein each</div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <button onClick={() => updateQty(item.flavor, item.count, -1)} style={{ width: 30, height: 30, borderRadius: 7, border: '1.5px solid rgba(0,0,0,.12)', background: 'none', cursor: 'pointer', fontSize: 17, fontWeight: 600 }}>−</button>

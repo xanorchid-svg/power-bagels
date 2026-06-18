@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const FAQS = [
   { q: 'What are the ingredients?', a: 'Whole wheat flour, whey protein isolate, cage-free egg whites, water, yeast, salt, and flavor-specific additions. That\'s it — nothing you can\'t pronounce.' },
-  { q: 'How much protein is in each bagel?', a: 'Every bagel — regardless of flavor — contains 32 grams of protein. One bagel = 32g of real, complete protein from whole food sources.' },
+  { q: 'How much protein is in each bagel?', a: 'Every bagel — regardless of flavor — contains 32 grams of protein. One bagel = 35g of real, complete protein from whole food sources.' },
   { q: 'Are all ingredients natural?', a: 'Yes. No artificial flavors, no artificial preservatives, no gums, no fillers. We use the same ingredients you\'d find in a well-stocked kitchen.' },
   { q: 'Where do you deliver?', a: 'Within 30 miles of Oceanside / San Diego, CA — covering most of San Diego County. Use the delivery checker to confirm your specific zip.' },
   { q: 'When do you deliver?', a: 'We deliver fresh on Sundays. You\'ll receive a text with your delivery window the day before.' },
