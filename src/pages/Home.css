@@ -301,8 +301,8 @@
   }
 
   .hero-text-col {
-    width: calc(100% - 48px);
-    margin: 0 24px;
+    width: calc(100% - 96px);
+    margin: 0 48px;
     padding: 32px 28px 36px;
     border-radius: 20px;
     background: rgba(255,255,255,0.82);
