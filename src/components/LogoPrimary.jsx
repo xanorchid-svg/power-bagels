@@ -1,5 +1,5 @@
 // Primary circular logo — exact recreation from brand guide
-// Transparent background, cream text on purple disc
+// Transparent background, cream text on orange disc
 export default function LogoPrimary({ size = 120, className = '' }) {
   return (
     <svg
@@ -18,8 +18,8 @@ export default function LogoPrimary({ size = 120, className = '' }) {
         <path id="arcTagline" d="M 80,310 A 130,130 0 0,0 320,310" />
       </defs>
 
-      {/* Main purple disc */}
-      <circle cx="200" cy="200" r="196" fill="#4A237D" />
+      {/* Main orange disc */}
+      <circle cx="200" cy="200" r="196" fill="#E68A00" />
 
       {/* Inner ring detail */}
       <circle cx="200" cy="200" r="186" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
@@ -37,10 +37,10 @@ export default function LogoPrimary({ size = 120, className = '' }) {
 
       {/* Center hole — white circle representing bagel hole */}
       <circle cx="200" cy="185" r="62" fill="#F5F0E8" />
-      <circle cx="200" cy="185" r="44" fill="#4A237D" />
+      <circle cx="200" cy="185" r="44" fill="#E68A00" />
 
       {/* Green banner across middle */}
-      <rect x="20" y="244" width="360" height="46" fill="#4A237D" />
+      <rect x="20" y="244" width="360" height="46" fill="#E68A00" />
       <line x1="20" y1="248" x2="380" y2="248" stroke="#7AC943" strokeWidth="3" />
       <line x1="20" y1="286" x2="380" y2="286" stroke="#7AC943" strokeWidth="3" />
       <text

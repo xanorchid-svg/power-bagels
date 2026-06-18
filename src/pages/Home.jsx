@@ -261,18 +261,18 @@ export default function Home() {
                 <svg width="320" height="320" viewBox="0 0 320 320">
                   <defs>
                     <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#4F238C" />
-                      <stop offset="100%" stopColor="#77C043" />
+                      <stop offset="0%" stopColor="#E68A00" />
+                      <stop offset="100%" stopColor="#8AA05C" />
                     </linearGradient>
                   </defs>
-                  <circle cx="160" cy="160" r="140" fill="var(--purple)" />
+                  <circle cx="160" cy="160" r="140" fill="var(--orange)" />
                   <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(255,255,255,.06)" strokeWidth="16" />
                   <circle cx="160" cy="160" r="120" fill="none" stroke="url(#rg)"
                     strokeWidth="16" strokeLinecap="round"
                     strokeDasharray="754" strokeDashoffset="188"
                     transform="rotate(-90 160 160)" />
                   <text x="160" y="148" textAnchor="middle" fill="white" fontSize="68" fontWeight="900" fontFamily="Inter,sans-serif" letterSpacing="-4">32</text>
-                  <text x="160" y="178" textAnchor="middle" fill="#77C043" fontSize="13" fontWeight="700" letterSpacing="3" fontFamily="Inter,sans-serif">GRAMS</text>
+                  <text x="160" y="178" textAnchor="middle" fill="#8AA05C" fontSize="13" fontWeight="700" letterSpacing="3" fontFamily="Inter,sans-serif">GRAMS</text>
                   <text x="160" y="198" textAnchor="middle" fill="rgba(255,255,255,.38)" fontSize="12" letterSpacing="2" fontFamily="Inter,sans-serif">PROTEIN</text>
                 </svg>
                 <div className="ring-pills">
@@ -318,7 +318,7 @@ export default function Home() {
           <div ref={addRef} className="reveal" style={{ textAlign:'center' }}>
             <span className="eyebrow">Order Now</span>
             <h2 className="display-lg" style={{ color:'var(--charcoal)' }}>
-              Pick your pack.<br /><span className="accent-purple">Power your week.</span>
+              Pick your pack.<br /><span className="accent-orange">Power your week.</span>
             </h2>
           </div>
           <div className="pack-grid">
@@ -327,7 +327,7 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign:'center', marginTop:32 }}>
-            <Link to="/order" className="btn-primary btn-purple">Choose Your Flavor →</Link>
+            <Link to="/order" className="btn-primary">Choose Your Flavor →</Link>
           </div>
         </div>
       </section>

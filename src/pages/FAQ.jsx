@@ -32,7 +32,7 @@ export default function FAQ() {
               style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px 0', fontFamily: 'Inter,sans-serif', textAlign: 'left' }}
             >
               <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--charcoal)', flex: 1 }}>{f.q}</span>
-              <div style={{ width: 26, height: 26, borderRadius: '50%', background: open === i ? 'var(--purple)' : 'rgba(79,35,140,.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: open === i ? 'var(--white)' : 'var(--purple)', fontSize: 17, flexShrink: 0, transition: 'all .3s', transform: open === i ? 'rotate(45deg)' : 'none' }}>+</div>
+              <div style={{ width: 26, height: 26, borderRadius: '50%', background: open === i ? 'var(--orange)' : 'rgba(230,138,0,.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: open === i ? 'var(--white)' : 'var(--orange)', fontSize: 17, flexShrink: 0, transition: 'all .3s', transform: open === i ? 'rotate(45deg)' : 'none' }}>+</div>
             </button>
             <div style={{ maxHeight: open === i ? 200 : 0, overflow: 'hidden', transition: 'max-height .4s cubic-bezier(.22,1,.36,1)' }}>
               <div style={{ paddingBottom: 18, fontSize: 14, lineHeight: 1.8, color: 'var(--gray)' }}>{f.a}</div>

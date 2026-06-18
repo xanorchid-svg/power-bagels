@@ -8,7 +8,7 @@ export default function Cart() {
     <main style={{ paddingTop: 68, textAlign: 'center', padding: '160px 48px' }}>
       <div style={{ fontSize: 64, marginBottom: 20 }}>🛒</div>
       <p style={{ color: 'rgba(0,0,0,.3)', fontSize: 16, marginBottom: 24 }}>Your cart is empty.</p>
-      <Link to="/order" className="btn-primary btn-purple">Shop Bagels →</Link>
+      <Link to="/order" className="btn-primary">Shop Bagels →</Link>
     </main>
   )
   return (
@@ -16,7 +16,7 @@ export default function Cart() {
       <h1 style={{ fontFamily: 'Satoshi,Inter,sans-serif', fontWeight: 900, fontSize: 40, color: 'var(--charcoal)', letterSpacing: '-.03em', marginBottom: 36 }}>Your Cart</h1>
       {cart.map(item => (
         <div key={`${item.flavor}-${item.count}`} style={{ display: 'flex', alignItems: 'center', gap: 18, background: 'var(--white)', borderRadius: 15, padding: '18px 22px', border: '1.5px solid rgba(0,0,0,.07)', marginBottom: 14 }}>
-          <div style={{ width: 58, height: 58, borderRadius: 11, background: 'var(--purple)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0 }}>🥯</div>
+          <div style={{ width: 58, height: 58, borderRadius: 11, background: 'var(--orange)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0 }}>🥯</div>
           <div style={{ flex: 1 }}>
             <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--charcoal)' }}>{item.flavor}</div>
             <div style={{ fontSize: 12, color: 'var(--gray)', marginTop: 2 }}>{item.count}-Pack · ${item.price} · 32g protein each</div>

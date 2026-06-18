@@ -8,7 +8,7 @@ export const PACKS = [
 
 export const FLAVORS = [
   { key: 'plain',     name: 'Plain',           desc: 'Classic, clean. A blank canvas.',          bg: 'linear-gradient(135deg,#f0e8d4,#d0a840)' },
-  { key: 'everything',name: 'Everything',      desc: 'Bold. Savory. Seeds, garlic, onion.',       bg: 'linear-gradient(135deg,#1a1030,#3a1a6e)' },
+  { key: 'everything',name: 'Everything',      desc: 'Bold. Savory. Seeds, garlic, onion.',       bg: 'linear-gradient(135deg,#1a0e00,#C97800)' },
   { key: 'cinnamon',  name: 'Cinnamon Raisin', desc: 'Sweet warmth. Perfect with cream cheese.', bg: 'linear-gradient(135deg,#4a1a00,#8b3500)' },
 ]
 

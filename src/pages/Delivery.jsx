@@ -26,13 +26,13 @@ export default function Delivery() {
             <input
               type="text" maxLength={5} inputMode="numeric" placeholder="e.g. 92054"
               value={zip} onChange={e => { setZip(e.target.value); setResult(null) }}
-              style={{ flex: 1, background: 'var(--white)', border: '2px solid rgba(79,35,140,.17)', borderRadius: 13, padding: '15px 20px', fontSize: 17, fontWeight: 600, fontFamily: 'Inter,sans-serif', outline: 'none' }}
+              style={{ flex: 1, background: 'var(--white)', border: '2px solid rgba(230,138,0,.17)', borderRadius: 13, padding: '15px 20px', fontSize: 17, fontWeight: 600, fontFamily: 'Inter,sans-serif', outline: 'none' }}
             />
-            <button type="submit" style={{ background: 'var(--purple)', color: 'var(--white)', border: 'none', borderRadius: 13, padding: '15px 26px', fontSize: 13, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', cursor: 'pointer', fontFamily: 'Inter,sans-serif', whiteSpace: 'nowrap' }}>
+            <button type="submit" style={{ background: 'var(--orange)', color: 'var(--white)', border: 'none', borderRadius: 13, padding: '15px 26px', fontSize: 13, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', cursor: 'pointer', fontFamily: 'Inter,sans-serif', whiteSpace: 'nowrap' }}>
               Check →
             </button>
           </div>
-          {result === 'ok' && <div style={{ borderRadius: 13, padding: '16px 20px', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 11, background: 'rgba(119,192,67,.1)', color: 'var(--green-dk)', border: '1.5px solid rgba(119,192,67,.22)' }}>✓ &nbsp;We deliver to your area! <Link to="/order" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}>Order now →</Link></div>}
+          {result === 'ok' && <div style={{ borderRadius: 13, padding: '16px 20px', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 11, background: 'rgba(138,160,92,.1)', color: 'var(--green-dk)', border: '1.5px solid rgba(138,160,92,.22)' }}>✓ &nbsp;We deliver to your area! <Link to="/order" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}>Order now →</Link></div>}
           {result === 'no' && <div style={{ borderRadius: 13, padding: '16px 20px', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 11, background: 'rgba(255,70,70,.07)', color: '#c03333', border: '1.5px solid rgba(255,70,70,.15)' }}>✗ &nbsp;Not in our zone yet — expanding soon.</div>}
           {result === 'invalid' && <div style={{ borderRadius: 13, padding: '16px 20px', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 11, background: 'rgba(255,70,70,.07)', color: '#c03333', border: '1.5px solid rgba(255,70,70,.15)' }}>✗ &nbsp;Please enter a valid 5-digit zip code.</div>}
         </form>
@@ -41,7 +41,7 @@ export default function Delivery() {
       <div style={{ maxWidth: 800, margin: '40px auto', padding: '0 48px' }}>
         <div style={{ background: 'linear-gradient(160deg,#e4eef8,#c8d8ee)', borderRadius: 20, height: 360, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
           <div style={{ fontSize: 48 }}>📍</div>
-          <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--purple)', background: 'var(--white)', borderRadius: 100, padding: '8px 22px', boxShadow: '0 4px 14px rgba(0,0,0,.1)' }}>30-Mile Radius · Oceanside & San Diego, CA</div>
+          <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--orange)', background: 'var(--white)', borderRadius: 100, padding: '8px 22px', boxShadow: '0 4px 14px rgba(0,0,0,.1)' }}>30-Mile Radius · Oceanside & San Diego, CA</div>
           <div style={{ fontSize: 13, color: '#668', textAlign: 'center' }}>Oceanside · Carlsbad · Vista · Escondido · San Diego · La Mesa · El Cajon & more</div>
         </div>
       </div>

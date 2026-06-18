@@ -25,13 +25,13 @@ export default function Order() {
           {FLAVORS.map(f => (
             <div key={f.key}
               onClick={() => setSelectedFlavor(f.key)}
-              style={{ borderRadius:16, overflow:'hidden', cursor:'pointer', border:`2.5px solid ${selectedFlavor===f.key?'var(--green)':'transparent'}`, transition:'all .25s', boxShadow: selectedFlavor===f.key?'0 8px 28px rgba(119,192,67,.2)':'' }}>
+              style={{ borderRadius:16, overflow:'hidden', cursor:'pointer', border:`2.5px solid ${selectedFlavor===f.key?'var(--green)':'transparent'}`, transition:'all .25s', boxShadow: selectedFlavor===f.key?'0 8px 28px rgba(138,160,92,.2)':'' }}>
               <div style={{ height:160, background:f.bg, display:'flex', alignItems:'center', justifyContent:'center', fontSize:56 }}>🥯</div>
               <div style={{ background:'var(--white)', padding:'16px 20px' }}>
                 <div style={{ fontWeight:800, fontSize:18, color:'var(--charcoal)', letterSpacing:'-.02em' }}>{f.name}</div>
                 <div style={{ fontSize:12, color:'var(--gray)', marginTop:3 }}>{f.desc}</div>
-                <div style={{ display:'inline-flex', alignItems:'center', gap:6, background:'rgba(79,35,140,.07)', borderRadius:7, padding:'5px 11px', marginTop:10 }}>
-                  <span style={{ fontWeight:800, fontSize:13, color:'var(--purple)' }}>32g</span>
+                <div style={{ display:'inline-flex', alignItems:'center', gap:6, background:'rgba(230,138,0,.07)', borderRadius:7, padding:'5px 11px', marginTop:10 }}>
+                  <span style={{ fontWeight:800, fontSize:13, color:'var(--orange)' }}>32g</span>
                   <span style={{ fontSize:10, color:'var(--gray)', letterSpacing:'.06em', textTransform:'uppercase' }}>Protein</span>
                 </div>
                 {selectedFlavor===f.key && <div style={{ marginTop:8, fontSize:11, fontWeight:700, color:'var(--green)' }}>✓ Selected</div>}
@@ -57,7 +57,7 @@ export default function Order() {
             <div style={{ display:'flex', justifyContent:'space-between', fontSize:14, color:'var(--gray)', marginBottom:10 }}><span>Flavor</span><span style={{ fontWeight:700, color:'var(--charcoal)' }}>{flavor.name}</span></div>
             <div style={{ display:'flex', justifyContent:'space-between', fontSize:14, color:'var(--gray)', marginBottom:10 }}><span>Pack</span><span style={{ fontWeight:700, color:'var(--charcoal)' }}>{pack.count} Bagel{pack.count>1?'s':''}</span></div>
             <div style={{ display:'flex', justifyContent:'space-between', fontSize:14, color:'var(--gray)', marginBottom:10 }}><span>Per bagel</span><span>${pack.ppu.toFixed(2)}</span></div>
-            <div style={{ display:'flex', justifyContent:'space-between', fontSize:18, fontWeight:800, color:'var(--charcoal)', marginTop:14, paddingTop:14, borderTop:'1.5px solid rgba(0,0,0,.07)' }}><span>Total</span><span style={{ color:'var(--purple)' }}>${pack.price}</span></div>
+            <div style={{ display:'flex', justifyContent:'space-between', fontSize:18, fontWeight:800, color:'var(--charcoal)', marginTop:14, paddingTop:14, borderTop:'1.5px solid rgba(0,0,0,.07)' }}><span>Total</span><span style={{ color:'var(--orange)' }}>${pack.price}</span></div>
             <button onClick={() => addToCart(flavor.name, pack.count, pack.price)} style={{ width:'100%', background:'var(--green)', color:'var(--white)', border:'none', borderRadius:13, padding:17, fontSize:14, fontWeight:700, letterSpacing:'.06em', textTransform:'uppercase', cursor:'pointer', fontFamily:'Inter,sans-serif', marginTop:18 }}>
               Add to Cart →
             </button>

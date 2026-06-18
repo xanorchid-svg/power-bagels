@@ -3,7 +3,7 @@ export default function About() {
   return (
     <main style={{ paddingTop: 68 }}>
       <div style={{ background: 'var(--charcoal)', minHeight: '60vh', display: 'flex', alignItems: 'center', padding: '80px 48px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(79,35,140,.38) 0%, transparent 65%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(230,138,0,.2) 0%, transparent 65%)' }} />
         <div style={{ maxWidth: 1320, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
             <span className="eyebrow eyebrow-lt">About Alice</span>
@@ -14,7 +14,7 @@ export default function About() {
               Every bagel is made from ingredients Alice would feed her own family — because she does.
             </p>
           </div>
-          <div style={{ width: '100%', aspectRatio: '4/5', borderRadius: 22, background: 'linear-gradient(160deg,#3a1a6e,#6b35b8)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ width: '100%', aspectRatio: '4/5', borderRadius: 22, background: 'linear-gradient(160deg,#C97800,#E68A00)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
             <span style={{ fontFamily: 'Satoshi,Inter,sans-serif', fontWeight: 900, fontSize: 100, color: 'rgba(255,255,255,.12)', letterSpacing: '-.05em' }}>A</span>
             <div style={{ position: 'absolute', bottom: 22, left: 22, background: 'rgba(255,255,255,.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,.14)', borderRadius: 11, padding: '11px 16px', color: 'var(--white)', fontWeight: 700, fontSize: 14 }}>Alice · Founder, Power Bagels</div>
           </div>

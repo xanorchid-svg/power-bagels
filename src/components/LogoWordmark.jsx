@@ -1,9 +1,9 @@
 // Secondary wordmark — exact match to brand guide
-// "POWER" / "BAGELS" massive stacked, transparent bg, purple text
+// "POWER" / "BAGELS" massive stacked, transparent bg, orange text
 // Green dash + "REAL INGREDIENTS. SERIOUS PROTEIN." tagline
 export default function LogoWordmark({ width = 280, dark = false, className = '' }) {
-  const textColor = dark ? '#4A237D' : '#F5F0E8'
-  const taglineColor = dark ? '#4A237D' : 'rgba(245,240,232,0.75)'
+  const textColor = dark ? '#E68A00' : '#F5F0E8'
+  const taglineColor = dark ? '#E68A00' : 'rgba(245,240,232,0.75)'
   const h = Math.round(width * 0.55)
 
   return (
