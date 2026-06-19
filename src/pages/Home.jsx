@@ -294,6 +294,10 @@ export default function Home() {
 
       {/* ══ CTA + EMAIL — now ABOVE order section ══ */}
       <section className="cta-section">
+        <div className="cta-video-bg">
+          {heroVideo && <video autoPlay muted loop playsInline src={heroVideo} />}
+        </div>
+        <div className="cta-overlay" />
         <div ref={addRef} className="cta-inner reveal">
           <h2 className="display-lg" style={{ color:'var(--white)', marginBottom:14 }}>
             Power Your Day.<br />Naturally.
