@@ -4,6 +4,7 @@ import { useCart } from '../context/CartContext'
 import PackCard from '../components/PackCard'
 import logoHero from '../assets/logo-hero.png'
 import logoFoodOfJoy from '../assets/logo-food-of-joy.png'
+import nutritionFacts from '../assets/nutrition-facts-plain.png'
 import { PACKS, DELIVERY_ZIPS } from '../data/constants'
 import './Home.css'
 
@@ -18,6 +19,10 @@ export default function Home() {
   const { addToCart } = useCart()
   const [zip, setZip] = useState('')
   const [zipResult, setZipResult] = useState(null)
+  const [orderZip, setOrderZip] = useState('')
+  const [orderZipResult, setOrderZipResult] = useState(null)
+  const [email, setEmail] = useState('')
+  const [emailSent, setEmailSent] = useState(false)
   const revealRefs = useRef([])
   const barRefs = useRef([])
 
@@ -55,6 +60,19 @@ export default function Home() {
     setZipResult(DELIVERY_ZIPS.has(zip) ? 'ok' : 'no')
   }
 
+  function checkOrderZip(e) {
+    e.preventDefault()
+    if (!/^\d{5}$/.test(orderZip)) { setOrderZipResult('invalid'); return }
+    setOrderZipResult(DELIVERY_ZIPS.has(orderZip) ? 'ok' : 'no')
+  }
+
+  function handleEmailSubmit(e) {
+    e.preventDefault()
+    if (email.includes('@')) {
+      setEmailSent(true)
+    }
+  }
+
   const addRef = el => { if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el) }
   const addBar = el => { if (el && !barRefs.current.includes(el)) barRefs.current.push(el) }
 
@@ -68,30 +86,21 @@ export default function Home() {
   return (
     <main className="home">
 
-      {/* ══ HERO — full bleed video, no overlay ══ */}
+      {/* ══ HERO ══ */}
       <section className="hero">
-
-        {/* Video — full bleed, no overlay */}
         <div className="hero-video-bg">
           {heroVideo && (
             <video autoPlay muted loop playsInline src={heroVideo} />
           )}
         </div>
 
-        {/* 
-          NO cream overlay — video shows full bleed.
-          Text sits on top with its own drop shadows for legibility.
-        */}
-
         <div className="hero-inner">
           <div className="hero-text-col">
 
-            {/* Power Bagels logo — full brand mark */}
             <div className="hero-wordmark">
               <img src={logoHero} alt="Power Bagels" className="hero-logo-img" />
             </div>
 
-            {/* 35G stat */}
             <div className="hero-stat-block">
               <div className="hero-stat-32g">
                 <span className="num">35G</span>
@@ -100,7 +109,6 @@ export default function Home() {
               <div className="hero-stat-sub">For Every Bagel</div>
             </div>
 
-            {/* Icons */}
             <div className="hero-icons">
               {icons.map((ic, i) => (
                 <div key={i} className="hero-icon-item">
@@ -110,10 +118,8 @@ export default function Home() {
               ))}
             </div>
 
-            {/* CTA */}
             <Link to="/order" className="hero-cta">Shop Bagels</Link>
 
-            {/* Delivery checker */}
             <div className="d-check">
               <div className="d-check-lbl">📍 Check if we deliver to you</div>
               <form className="d-row" onSubmit={checkZip}>
@@ -150,7 +156,7 @@ export default function Home() {
       <div className="ticker">
         <div className="ticker-track" aria-hidden="true">
           {[...Array(2)].map((_, r) =>
-            ['Missing bread? We got you','35g Protein — Every Bagel','Plain · Everything · Blueberry · Sesame','Zero Artificial Ingredients','Delivering Within 30 Miles of San Diego','Real Ingredients. Serious Protein.']
+            ['Missing bread? We got you','35g Protein — Every Bagel','Plain · Everything · Blueberry · Sesame','Zero Artificial Ingredients','Real Ingredients. Serious Protein.','Freshly Baked. Same-Day Delivered.']
               .map((t, i) => (
                 <span key={`${r}-${i}`} className="ticker-item">
                   <span className="ticker-dot" />{t}
@@ -171,12 +177,12 @@ export default function Home() {
           </div>
           <div className="why-grid">
             {[
-              { icon:'⚡', title:'35g Protein from Real Sources', body:'Not powder dumped into dough. Every gram comes from whole wheat, whey isolate, and egg whites — the kind of protein your body actually uses.' },
-              { icon:'🌿', title:'Read Every Ingredient', body:"Flip over a typical protein product and count the words you can't pronounce. Flip ours. Everything is real, intentional, nothing is hiding." },
-              { icon:'🥯', title:'It Actually Tastes Like a Bagel', body:"Dense, chewy, satisfying. The thing you've been craving while everyone told you bread was the enemy. Turns out the problem was never the bagel." },
-              { icon:'🧊', title:'Freeze. Toast. Done.', body:"Order a 12-pack, freeze them, grab one each morning and toast for 3 minutes. Zero planning. Maximum protein." },
-              { icon:'📦', title:'Delivered Fresh to Your Door', body:'We bake and deliver fresh within 30 miles of Oceanside & San Diego. Enter your zip — most of the region is covered.' },
-              { icon:'🍽️', title:'Meals, Not Just Macros', body:"Cream cheese. Avocado. Smoked salmon. Everything you'd put on a regular bagel — now that bagel is working as hard as you are." },
+              { icon:'⚡', title:'35g Complete Plant-Based Protein', body:'While most bagels have around 10g protein, Power Bagels give you 35g of complete plant protein with all nine essential amino acids.' },
+              { icon:'🌿', title:'It Actually Tastes Like a Bagel', body:"Dense, chewy, satisfying. The thing you've been craving while everyone told you bread was the enemy. Turns out the problem was never the bagel." },
+              { icon:'🌾', title:'Simpler Ingredients, Better for You', body:'Power Bagels are made with only 8 simple ingredients. No preservatives, artificial additives, modified starches, or added sugar—just real food your body can recognize.' },
+              { icon:'🧊', title:'High Fiber to Keep Your Gut Healthy', body:'Each bagel gives you 10g fiber, about one-third of the daily fiber most adults need. The fiber feeds the good bacteria in the gut to keep your microbiome healthy.' },
+              { icon:'📦', title:'Delivered Fresh to Your Door', body:'We bake fresh and deliver twice each week on Sundays and Wednesdays. Instead of sitting on a shelf for days, your bagels arrive fresh and ready to enjoy.' },
+              { icon:'🍽️', title:'Pre-Sliced and Individually Wrapped', body:'Every Power Bagel is pre-sliced and individually wrapped for convenience. Toast it, build a quick sandwich, or grab one on the go. So easy and delicious!' },
             ].map((c, i) => (
               <div key={i} ref={addRef} className="why-card reveal">
                 <div className="why-icon">{c.icon}</div>
@@ -216,12 +222,12 @@ export default function Home() {
             <div>
               <div className="col-label">Power Bagels <span className="col-badge pb">Always 35g</span></div>
               <div className="bar-row" style={{ marginBottom:24 }}>
-                <div className="bar-lbl"><span>Power Bagel (any flavor)</span><span style={{ color:'var(--green)' }}>35g ✓</span></div>
+                <div className="bar-lbl"><span>Power Bagel (any flavor)</span><span style={{ color:'var(--white)' }}>35g ✓</span></div>
                 <div className="bar-track"><div className="bar-fill bf-green" data-w={100} style={{ width:0 }} /></div>
               </div>
               <div className="proof-box">
                 <div className="proof-label">What else you get</div>
-                {['Real whole-food ingredients — nothing artificial','Tastes like food you actually want to eat','Fills you up — no mid-morning crash','Delivered fresh to your door'].map((t, i) => (
+                {['Real ingredients — nothing artificial','Tastes like food you actually want to eat','Fills you up — no mid-morning crash','Delivered fresh to your door'].map((t, i) => (
                   <div key={i} className="proof-row"><span className="proof-check">✓</span><span className="proof-text">{t}</span></div>
                 ))}
               </div>
@@ -234,53 +240,30 @@ export default function Home() {
       <section className="nutrition-section">
         <div className="section-inner">
           <div className="nutrition-inner">
-            <div ref={addRef} className="reveal">
+            <div ref={addRef} className="reveal nutrition-copy">
               <span className="eyebrow">Nutritional Value</span>
               <h2 className="display-lg" style={{ color:'var(--charcoal)', marginBottom:18 }}>
                 The numbers<br />don't lie.
               </h2>
-              <p style={{ color:'var(--gray)', fontSize:15, lineHeight:1.7, maxWidth:420 }}>
-                Every macronutrient is intentional. Every ingredient earns its place.
+              <p className="nutrition-body">
+                Unlike ordinary bagels that are loaded with refined carbs and leave you hungry a few hours later, Power Bagels™ are designed to keep you fueled and satisfied.
               </p>
-              <div className="n-list">
-                {[
-                  { icon:'🌾', name:'Whole Wheat Flour', desc:'Stone-ground, high-protein wheat. Foundation — not filler.' },
-                  { icon:'🥛', name:'Whey Protein Isolate', desc:'Complete amino acid profile. Bioavailable. From real dairy.' },
-                  { icon:'🥚', name:'Cage-Free Egg Whites', desc:'Adds structure, texture, and another clean protein source.' },
-                  { icon:'🚫', name:'Zero Artificial Anything', desc:'No gums. No fillers. No preservatives. Full stop.' },
-                ].map((n, i) => (
-                  <div key={i} className="n-row">
-                    <div className="n-icon">{n.icon}</div>
-                    <div><div className="n-name">{n.name}</div><div className="n-desc">{n.desc}</div></div>
-                  </div>
-                ))}
-              </div>
+              <p className="nutrition-body">
+                Each bagel delivers 35g of complete plant-based protein, 10g of fiber, and wholesome complex carbohydrates from whole grains—all for just 260 calories. With no added sugar, preservatives, or artificial ingredients, you get the nutrition your body needs and the taste you crave.
+              </p>
+              <p className="nutrition-body" style={{ fontStyle:'italic', opacity:0.7 }}>
+                <strong>Ingredients:</strong> Water, wheat gluten, lupin flour, whole grain wheat flour, yellow pea protein, dates, instant yeast, sea salt.
+              </p>
+              <p className="nutrition-body">
+                It's everything you want from a bagel—and nothing you don't.
+              </p>
             </div>
             <div ref={addRef} className="reveal nutrition-visual">
-              <div className="ring-wrap">
-                <svg width="320" height="320" viewBox="0 0 320 320">
-                  <defs>
-                    <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FA7C08" />
-                      <stop offset="100%" stopColor="#8FA468" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="160" cy="160" r="140" fill="var(--orange)" />
-                  <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(255,255,255,.06)" strokeWidth="16" />
-                  <circle cx="160" cy="160" r="120" fill="none" stroke="url(#rg)"
-                    strokeWidth="16" strokeLinecap="round"
-                    strokeDasharray="754" strokeDashoffset="188"
-                    transform="rotate(-90 160 160)" />
-                  <text x="160" y="148" textAnchor="middle" fill="white" fontSize="68" fontWeight="900" fontFamily="Inter,sans-serif" letterSpacing="-4">35</text>
-                  <text x="160" y="178" textAnchor="middle" fill="#8FA468" fontSize="13" fontWeight="700" letterSpacing="3" fontFamily="Inter,sans-serif">GRAMS</text>
-                  <text x="160" y="198" textAnchor="middle" fill="rgba(255,255,255,.38)" fontSize="12" letterSpacing="2" fontFamily="Inter,sans-serif">PROTEIN</text>
-                </svg>
-                <div className="ring-pills">
-                  <div className="mpill mp1"><span className="mpill-val">280</span><span className="mpill-lbl">Cal</span></div>
-                  <div className="mpill mp2"><span className="mpill-val">48g</span><span className="mpill-lbl">Carbs</span></div>
-                  <div className="mpill mp3"><span className="mpill-val">4g</span><span className="mpill-lbl">Fat</span></div>
-                </div>
-              </div>
+              <img
+                src={nutritionFacts}
+                alt="Nutrition Facts — Power Bagels Plain"
+                className="nutrition-facts-img"
+              />
             </div>
           </div>
         </div>
@@ -291,7 +274,7 @@ export default function Home() {
         <div className="section-inner">
           <div ref={addRef} className="reveal" style={{ textAlign:'center', marginBottom:56 }}>
             <span className="eyebrow">Real People</span>
-            <h2 className="display-lg" style={{ color:'var(--white)' }}>They switched.<br />They stayed.</h2>
+            <h2 className="display-lg testi-headline">They switched.<br />They stayed.</h2>
           </div>
           <div className="testi-grid">
             {[
@@ -316,9 +299,9 @@ export default function Home() {
       <section className="order-embed">
         <div className="section-inner">
           <div ref={addRef} className="reveal" style={{ textAlign:'center' }}>
-            <span className="eyebrow">Order Now</span>
-            <h2 className="display-lg" style={{ color:'var(--charcoal)' }}>
-              Pick your pack.<br /><span className="accent-orange">Power your week.</span>
+            <span className="eyebrow eyebrow-lg">Order Now</span>
+            <h2 className="display-xl" style={{ color:'var(--charcoal)' }}>
+              Pick your pack.<br /><span className="accent-orange">Power your day. Naturally.</span>
             </h2>
           </div>
           <div className="pack-grid">
@@ -326,8 +309,38 @@ export default function Home() {
               <PackCard key={i} pack={p} onAdd={() => addToCart('Everything', p.count, p.price)} />
             ))}
           </div>
-          <div style={{ textAlign:'center', marginTop:32 }}>
-            <Link to="/order" className="btn-primary">Choose Your Flavor →</Link>
+          <div className="order-info-block">
+            <div className="order-info-pills">
+              <span className="order-pill">🚚 $5.95 Flat Delivery Fee</span>
+              <span className="order-pill">✨ Freshly Made and Delivered the Same Day</span>
+            </div>
+            <p className="order-info-text">
+              Each bagel is individually packaged. They can be kept at room temperature for up to 3 days or in the fridge for up to 7 days. You can also freeze them. We deliver to most zip codes in San Diego and North County.
+            </p>
+            <div className="d-check order-zip-check">
+              <div className="d-check-lbl">📍 Check if we deliver to you</div>
+              <form className="d-row" onSubmit={checkOrderZip}>
+                <input
+                  className="d-input"
+                  type="text"
+                  placeholder="Enter your zip code"
+                  maxLength={5}
+                  inputMode="numeric"
+                  value={orderZip}
+                  onChange={e => { setOrderZip(e.target.value); setOrderZipResult(null) }}
+                />
+                <button className="d-btn" type="submit">Check →</button>
+              </form>
+              {orderZipResult === 'ok' && (
+                <div className="d-result ok">✓ &nbsp;We deliver to you! <Link to="/order" style={{ color:'inherit', fontWeight:700, textDecoration:'underline' }}>Order now →</Link></div>
+              )}
+              {orderZipResult === 'no' && (
+                <div className="d-result no">✗ &nbsp;Not in our zone yet — expanding soon.</div>
+              )}
+              {orderZipResult === 'invalid' && (
+                <div className="d-result no">✗ &nbsp;Please enter a valid 5-digit zip code.</div>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -338,10 +351,29 @@ export default function Home() {
           <h2 className="display-lg" style={{ color:'var(--white)', marginBottom:14 }}>Power Your Day.<br />Naturally.</h2>
           <p className="cta-sub">Join thousands who swapped their protein shake for something they actually enjoy.</p>
           <Link to="/order" className="btn-primary">Shop Bagels →</Link>
+
+          <div className="email-signup">
+            <p className="email-signup-label">Stay in the loop — get updates, recipes, and first access to new flavors.</p>
+            {emailSent ? (
+              <div className="email-success">✓ You're in! Talk soon.</div>
+            ) : (
+              <form className="email-row" onSubmit={handleEmailSubmit}>
+                <input
+                  type="email"
+                  className="email-input"
+                  placeholder="Your email address"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                />
+                <button type="submit" className="email-btn">Subscribe</button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
 
-      {/* FOOTER — circular logo image */}
+      {/* FOOTER */}
       <footer>
         <div className="footer-inner">
           <div>
@@ -352,7 +384,7 @@ export default function Home() {
                 <span className="footer-logo-parent">by Food of Joy</span>
               </div>
             </div>
-            <p className="footer-tagline">Real Ingredients. Serious Protein.<br />Delivering within 30 miles of Oceanside & San Diego, CA.</p>
+            <p className="footer-tagline">Real Ingredients. Serious Protein.</p>
           </div>
           <div><div className="footer-col-title">Shop</div><ul className="footer-links"><li><Link to="/order">Plain Bagels</Link></li><li><Link to="/order">Everything Bagels</Link></li><li><Link to="/order">Sesame</Link></li></ul></div>
           <div><div className="footer-col-title">Info</div><ul className="footer-links"><li><Link to="/delivery">Delivery Areas</Link></li><li><Link to="/faq">FAQ</Link></li></ul></div>
