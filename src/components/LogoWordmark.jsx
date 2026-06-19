@@ -48,7 +48,7 @@ export default function LogoWordmark({ width = 280, dark = false, className = ''
       >™</text>
 
       {/* Green dash */}
-      <rect x="0" y="295" width="80" height="5" rx="3" fill="#8FA468" />
+      <rect x="0" y="295" width="80" height="5" rx="3" fill="#025a2a" />
 
       {/* REAL INGREDIENTS. SERIOUS PROTEIN. */}
       <text

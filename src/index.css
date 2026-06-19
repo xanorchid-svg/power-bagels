@@ -5,8 +5,8 @@
   --orange:    #FA7C08;
   --orange-dk: #d96500;
   --orange-lt: #fb9535;
-  --green:     #8FA468;
-  --green-dk:  #6e8050;
+  --green:     #025a2a;
+  --green-dk:  #013d1c;
   --cream:     #F8F5EF;
   --cream-dk:  #ede9df;
   --charcoal:  #222222;
@@ -169,7 +169,7 @@ body {
 
 /* ── FOOTER ── */
 footer {
-  background: #1a0e00;
+  background: #012d15;
   padding: 64px 48px 36px;
 }
 .footer-inner {

@@ -173,22 +173,22 @@
   outline: none; transition: border-color .2s, background .2s;
 }
 .d-input::placeholder { color: rgba(180,110,0,.35); }
-.d-input:focus { border-color: #3d6b2c; background: white; }
+.d-input:focus { border-color: #025a2a; background: white; }
 .d-btn {
-  background: #3d6b2c; color: white;
+  background: #025a2a; color: white;
   border: none; border-radius: 8px;
   padding: 12px 20px; font-size: 12px; font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase;
   cursor: pointer; font-family: 'Inter',sans-serif;
   white-space: nowrap; transition: background .2s, transform .15s;
 }
-.d-btn:hover { background: #2a4d1e; transform: translateY(-1px); }
+.d-btn:hover { background: #013d1c; transform: translateY(-1px); }
 .d-result {
   margin-top: 10px; font-size: 13px; font-weight: 600;
   border-radius: 8px; padding: 10px 13px;
   display: flex; align-items: center; gap: 8px;
 }
-.d-result.ok { background: rgba(61,107,44,.15); color: #2a4d1e; }
+.d-result.ok { background: rgba(2,90,42,.12); color: #013d1c; }
 .d-result.no { background: rgba(220,60,60,.1); color: #b03030; }
 
 /* ── HERO LOGO IMG ── */
@@ -268,7 +268,7 @@
 /* ══════════════════════════════════════
    TESTIMONIALS
 ══════════════════════════════════════ */
-.testi-section { background: #1a2e1a; padding: 100px 0; }
+.testi-section { background: #012d15; padding: 100px 0; }
 .testi-headline { color: var(--white); font-size: clamp(36px, 5vw, 72px) !important; }
 .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
 .t-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:18px; padding:32px; transition:border-color .3s; }

@@ -41,15 +41,15 @@ export default function LogoPrimary({ size = 120, className = '' }) {
 
       {/* Green banner across middle */}
       <rect x="20" y="244" width="360" height="46" fill="#FA7C08" />
-      <line x1="20" y1="248" x2="380" y2="248" stroke="#8FA468" strokeWidth="3" />
-      <line x1="20" y1="286" x2="380" y2="286" stroke="#8FA468" strokeWidth="3" />
+      <line x1="20" y1="248" x2="380" y2="248" stroke="#025a2a" strokeWidth="3" />
+      <line x1="20" y1="286" x2="380" y2="286" stroke="#025a2a" strokeWidth="3" />
       <text
         x="200" y="273"
         textAnchor="middle"
         fontFamily="'Satoshi','Arial',sans-serif"
         fontWeight="700"
         fontSize="19"
-        fill="#8FA468"
+        fill="#025a2a"
         letterSpacing="2.5"
       >32Gs OF PROTEIN FOR EVERY BAGEL</text>
 
@@ -66,7 +66,7 @@ export default function LogoPrimary({ size = 120, className = '' }) {
 
       {/* Green leaf icon at bottom */}
       <g transform="translate(192, 352) scale(0.9)">
-        <path d="M8,0 C8,0 0,8 0,14 C0,18.4 3.6,22 8,22 C12.4,22 16,18.4 16,14 C16,8 8,0 8,0 Z" fill="#8FA468" transform="translate(-4,-2) rotate(-20,8,11)"/>
+        <path d="M8,0 C8,0 0,8 0,14 C0,18.4 3.6,22 8,22 C12.4,22 16,18.4 16,14 C16,8 8,0 8,0 Z" fill="#025a2a" transform="translate(-4,-2) rotate(-20,8,11)"/>
         <path d="M8,0 C8,0 0,8 0,14 C0,18.4 3.6,22 8,22 C12.4,22 16,18.4 16,14 C16,8 8,0 8,0 Z" fill="#5e9932" transform="translate(4,-2) rotate(20,8,11)"/>
       </g>
 
