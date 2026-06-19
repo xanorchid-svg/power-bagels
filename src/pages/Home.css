@@ -4,12 +4,11 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
-  overflow: hidden;
+  min-height: 100vh;
+  /* Let content grow freely — never clip the panel */
+  overflow: visible;
   display: flex;
-  align-items: center;
-  /* No padding-top — hero panel starts right at nav */
+  align-items: flex-start;
   padding-top: 0;
 }
 
@@ -18,6 +17,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 .hero-video-bg video {
   width: 100%;
@@ -32,29 +32,30 @@
   z-index: 2;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 64px;
+  padding: 126px 64px 64px;
   width: 100%;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  /* Push content down past the nav */
-  padding-top: 106px;
   box-sizing: border-box;
 }
 
-/* Text panel — left ~44% */
+/* Text panel — left ~44%, always grows to fit content */
 .hero-text-col {
   width: 44%;
+  max-width: 540px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.90);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 36px 40px 40px;
-  /* Panel rises to cover any gap at top of viewport */
-  margin-top: -40px;
+  /* Never clip — grow to fit all content */
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 /* ── WORDMARK in hero ── */
@@ -444,7 +445,6 @@
 @media (max-width: 768px) {
 
   .hero {
-    height: auto;
     min-height: 100svh;
     padding-top: 0;
   }
@@ -454,21 +454,22 @@
   }
 
   .hero-inner {
-    padding: 106px 0 40px;
+    padding: 126px 20px 48px;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    min-height: 100svh;
   }
 
   .hero-text-col {
-    width: calc(100% - 48px);
-    margin: 0 24px;
-    padding: 32px 24px 36px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 22px 32px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
     margin-top: 0;
   }
 
@@ -482,9 +483,10 @@
   .hero-stat-32g .num { font-size: clamp(44px, 14vw, 72px); }
   .hero-stat-label { font-size: clamp(14px, 4vw, 20px); }
 
-  .hero-icons { gap: 12px; flex-wrap: wrap; }
-  .hero-icon-circle { width: 44px; height: 44px; font-size: 18px; }
-  .hero-icon-label { font-size: 9px; max-width: 56px; }
+  .hero-icons { gap: 10px; flex-wrap: nowrap; justify-content: space-between; }
+  .hero-icon-item { flex: 1; min-width: 0; }
+  .hero-icon-circle { width: 40px; height: 40px; font-size: 17px; }
+  .hero-icon-label { font-size: 8px; max-width: 100%; }
 
   .hero-cta { width: 100%; justify-content: center; padding: 14px 24px; font-size: 14px; }
 
