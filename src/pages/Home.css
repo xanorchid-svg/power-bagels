@@ -244,13 +244,13 @@
   background: rgba(1,45,21,.75);
 }
 
-/* Eyebrow — 5x bigger */
+/* Eyebrow on dark/light backgrounds */
 .eyebrow-lt {
-  font-size: 18px !important;
+  font-size: 20px !important;
   letter-spacing: .1em !important;
   font-weight: 800 !important;
-  color: rgba(255,255,255,.9) !important;
-  margin-bottom: 16px !important;
+  color: rgba(255,255,255,.95) !important;
+  margin-bottom: 18px !important;
 }
 
 .compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
@@ -265,7 +265,7 @@
 .bar-fill { height:100%; border-radius:100px; width:0; transition:width 1.3s var(--ease); }
 /* White bars instead of red */
 .bf-red { background: rgba(255,255,255,.7); }
-.bf-green { background: #025a2a; }
+.bf-green { background: var(--orange); }
 .proof-box { background:rgba(255,255,255,.12); border-radius:16px; padding:28px 26px; margin-top:28px; backdrop-filter:blur(4px); }
 .proof-label { font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-bottom:16px; font-weight:700; }
 .proof-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
@@ -326,11 +326,12 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(1,45,21,.82);
+  background: rgba(200,85,0,.88);
 }
 .cta-inner { position:relative; z-index:2; }
 .cta-sub { color:rgba(255,255,255,.9); font-size:20px; font-weight:400; margin-bottom:36px; max-width:600px; margin-left:auto; margin-right:auto; }
-.cta-shop-btn { margin-bottom: 0; }
+.cta-shop-btn { margin-bottom: 0; background: #025a2a; box-shadow: 0 8px 32px rgba(1,45,21,.4); }
+.cta-shop-btn:hover { background: #013d1c; box-shadow: 0 16px 44px rgba(1,45,21,.5); }
 
 /* Email signup */
 .email-signup {
@@ -355,12 +356,12 @@
 }
 .email-input::placeholder { color:rgba(0,0,0,.35); }
 .email-btn {
-  background:#012d15; color:var(--white); border:none; border-radius:8px;
+  background:#025a2a; color:var(--white); border:none; border-radius:8px;
   padding:15px 28px; font-size:14px; font-weight:700; letter-spacing:.06em;
   text-transform:uppercase; cursor:pointer; font-family:'Satoshi','Arial Black',sans-serif;
   transition:background .2s; white-space:nowrap;
 }
-.email-btn:hover { background:#025a2a; }
+.email-btn:hover { background:#013d1c; }
 .email-success { color:var(--white); font-size:18px; font-weight:700; padding:15px 0; }
 
 /* ══════════════════════════════════════
