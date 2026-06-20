@@ -14,6 +14,13 @@ try {
   heroVideo = null
 }
 
+let compareVideo
+try {
+  compareVideo = new URL('../assets/compare-bagels.mp4', import.meta.url).href
+} catch {
+  compareVideo = null
+}
+
 export default function Home() {
   const [zip, setZip] = useState('')
   const [zipResult, setZipResult] = useState(null)
@@ -193,7 +200,7 @@ export default function Home() {
       {/* COMPARE — video background */}
       <section className="compare-section">
         <div className="compare-video-bg">
-          {heroVideo && <video autoPlay muted loop playsInline src={heroVideo} />}
+          {compareVideo && <video autoPlay muted loop playsInline src={compareVideo} />}
         </div>
         <div className="compare-overlay" />
         <div className="section-inner" style={{ position:'relative', zIndex:2 }}>
